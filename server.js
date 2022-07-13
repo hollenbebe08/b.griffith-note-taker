@@ -1,6 +1,9 @@
 const express = require('express');
 const { notes } = require('./data/notes.json');
 
+//hardcodes the port for heroku
+const PORT = process.env.PORT || 3001;
+
 //insantiate the server
 const app = express();
 
@@ -23,6 +26,6 @@ app.get('/api/notes', (req, res) => {
 });
 
 //tell the server to listen for requests
-app.listen(3001, () => {
-    console.log(`API server now on port 3001!`);
-});
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
+  });
