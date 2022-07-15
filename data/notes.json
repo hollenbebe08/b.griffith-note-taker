@@ -1,8 +1,24 @@
-{ "notes": [
+{
+  "notes": [
     {
-        "title":"title",
-        "text":"text"
+      "title": "title",
+      "text": "text",
+      "id": "0"
+    },
+    {
+      "title": "title",
+      "text": "text",
+      "id": "1"
+    },
+    {
+      "title": "title",
+      "text": "text",
+      "id": "2"
+    },
+    {
+      "title": "title",
+      "text": "this is text",
+      "id": "3"
     }
-    ]
+  ]
 }
-
