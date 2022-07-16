@@ -31,26 +31,15 @@ const getNotes = () =>
     headers: {
       'Content-Type': 'application/json',
     },
-  });
+});
 
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
     headers: {
-      // Accept: 'application/json',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(note),
-  // })
-  // .then(response => {
-  //   if(response.ok){
-  //     return response.json();
-  //   }
-  //   alert('Error: ' + response.statusText)
-  // })
-  // .then(postResponse => {
-  //   console.log(postResponse);
-  //   alert ('You have created a note!')
   });
 
 const deleteNote = (id) =>
@@ -115,6 +104,7 @@ const handleNoteView = (e) => {
 
 // Sets the activeNote to and empty object and allows the user to enter a new note
 const handleNewNoteView = (e) => {
+  console.log("is this working")
   activeNote = {};
   renderActiveNote();
 };
@@ -168,11 +158,13 @@ const renderNoteList = async (notes) => {
   if (jsonNotes.length === 0) {
     noteListItems.push(createLi('No saved Notes', false));
   }
+  console.log(jsonNotes);
 
   jsonNotes.forEach((note) => {
+    console.log(note)
     const li = createLi(note.title);
     li.dataset.note = JSON.stringify(note);
-
+  
     noteListItems.push(li);
   });
 
